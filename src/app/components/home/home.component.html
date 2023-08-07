@@ -1,0 +1,21 @@
+<input type="file" (change)="onFileChange($event)"> 
+
+<c-carousel transition="crossfade" [animate]="false" [interval]="30000">
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of slides">
+        <img
+          alt="{{slide.title}}"
+          class="d-block w-100"
+          loading="lazy"
+          src="https://media.wired.com/photos/593261cab8eb31692072f129/master/w_2560%2Cc_limit/85120553.jpg"
+        />
+        <c-carousel-caption class="d-none d-md-block">
+          <h3>{{slide.title}}</h3>
+          <p>{{slide.subtitle}}</p>
+        </c-carousel-caption>
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control  caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
