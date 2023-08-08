@@ -1,0 +1,18 @@
+<div class="posts">
+    <ng-container *ngFor="let post of posts">
+        <div class='post'>
+            <img class='postImg' src="{{post.image}}" alt="" />
+            <div class="postInfo">
+                <div class="postCats">
+                    <span class="postCat">Music</span>
+                    <span class="postCat">Life</span>
+                </div>
+                <span class='postTitle' routerLink="/posts/{{post.id}}">{{post.title}}</span>
+                <hr />
+                <span class="postDate">1 hour ago</span>
+            </div>
+            <p class='postDescription'>{{post.post}}</p>
+        </div>
+    </ng-container>
+    </div>
+    

@@ -18,7 +18,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { RegisterComponent } from './components/register/register.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [

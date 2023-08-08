@@ -8,11 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RegisterComponent } from 'src/app/components/register/register.component';
+import { ProfileComponent } from 'src/app/components/profile/profile.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent , RegisterComponent],
+  declarations: [LoginComponent , RegisterComponent, ProfileComponent],
   imports: [
     CommonModule,
     MatSnackBarModule,

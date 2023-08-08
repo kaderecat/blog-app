@@ -1,0 +1,14 @@
+<div class='write'>
+    <img class='writeImg' src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" alt="" />
+    <form #f="ngForm" (ngSubmit)="addPost(f)" class='writeForm'>
+      <div class="writeFormGroup">
+        <label class='writeLabel' for="fileInput"><i  class="writeIcon fa-solid fa-plus"></i></label>
+        <input type="file" id='fileInput' name="image" style="display: none" ngModel (change)="upload($event,f )">
+        <input type="text" placeholder='Title' name="title" class='writeInput' autoFocus={true} ngModel/>
+      </div>
+      <div class="writeFormGroup">
+        <textarea placeholder='Tell your story...' name="post" type='text' class='writeInput writeText' ngModel></textarea>
+      </div>
+      <button class='writeSubmit'>Publish</button>
+    </form>
+  </div>

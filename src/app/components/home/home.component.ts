@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +8,10 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 export class HomeComponent implements OnInit{
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
 
-  constructor(private storage : AngularFireStorage){}
+  constructor(){}
 
-  async onFileChange(event:any){
-    const file = event.target.files[0]
-    if(file){
-      const path = `yt/${file.name}`
-      const uploadTask =await this.storage.upload(path,file)
-      const url = await uploadTask.ref.getDownloadURL()
-      console.log(url)  
-    }
-}
+  
+
 
 ngOnInit(): void {
   this.slides[0] = {

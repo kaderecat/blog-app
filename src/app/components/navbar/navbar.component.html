@@ -4,9 +4,9 @@
     </div>
     <div class="topCenter">
       <ul class="topList">
-        <li class="topListItem" routerLink="/">HOME</li>
+        <li class="topListItem" routerLink="/home">HOME</li>
         <li class="topListItem" routerLink="/posts">POSTS</li>
-        <li class="topListItem" routerLink="/write">WRITE</li>
+        <li class="topListItem" routerLink="/add-post">WRITE</li>
       </ul>
     </div>
     <div class="topRight">
@@ -16,7 +16,7 @@
         <img
         mat-button [matMenuTriggerFor]="menu"
         class="topImg"
-        src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
+        [src]="user.photoURL ?? '../../../assets/images/placeholder.jpg'"
         alt=""
       />
         <mat-menu #menu="matMenu">
