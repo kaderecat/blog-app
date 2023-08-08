@@ -1,0 +1,112 @@
+.register {
+    display: flex;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: url("https://images.thewest.com.au/publication/C-9375669/e25a1ef2a60c8d4d9b94749f5afdbf8cdc0fc4a0-16x9-x0y17w1695h953.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .form {
+    font-family: "Josefin Sans", sans-serif;
+    position: relative;
+    padding: 40px 30px;
+    background-color: rgba(46, 43, 43, 0.9);
+    box-shadow: 0 0 10px;
+    border-radius: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form h2 {
+    margin-bottom: 40px;
+  }
+  .mat-mdc-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form h2,
+  p {
+    color: rgb(255, 255, 255);
+  }
+  
+  .form a {
+    color: rgb(210, 238, 30);
+  }
+  
+  i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 23px;
+    right: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  ::placeholder {
+    color: white !important;
+  }
+  button:disabled {
+    background-color: black 0.9;
+  }
+  .form .button button {
+    height: 50px;
+    width: 350px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .form .button button:enabled {
+    background-color: #c98e0edb;
+  }
+  
+  .form .button button:hover {
+    scale: 1.01;
+  }
+  
+  .login-signup {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .login-signup a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .login-signup a:hover {
+    scale: 1.05;
+    opacity: 0.6;
+  }
+  
+  .error {
+    position: absolute;
+    bottom: 150px;
+    left: 36px;
+  
+  
+  }
+  
+  
+  

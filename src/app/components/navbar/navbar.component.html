@@ -10,9 +10,9 @@
       </ul>
     </div>
     <div class="topRight">
-        <!-- *ngIf="user$ | async as user ; else Notlogged" -->
-      <ng-container >
-        <!-- <h1>Welcome, {{user.displayName}}</h1> -->
+        
+      <ng-container *ngIf="user$ | async as user ; else Notlogged"  >
+        <h1>Welcome, {{user.displayName}}</h1>
         <img
         mat-button [matMenuTriggerFor]="menu"
         class="topImg"

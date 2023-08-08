@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "blog-app-ae98d": {
+      "hosting": {
+        "blog-app": [
+          "blog-app-ae98d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "blog-app-ae98d"
+  }
+}

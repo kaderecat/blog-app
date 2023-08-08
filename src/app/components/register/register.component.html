@@ -1,0 +1,80 @@
+<div class="register">
+    <form class="form" [formGroup]="form" (ngSubmit)="register()">
+      <h2>Register</h2>
+      <mat-form-field class="input-bar">
+        <mat-label>Username</mat-label>
+        <input
+          type="username"
+          matInput
+          placeholder="Enter your username."
+          formControlName="username"
+        />
+        <mat-error *ngIf="form.get('username')!.hasError('required')">
+          Username is required!
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="input-bar">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="Ex. pat@example.com"
+          formControlName="email"
+        />
+        <mat-error *ngIf="form.get('email')!.hasError('required')">
+          Email is required!
+        </mat-error>
+        <mat-error *ngIf="form.get('email')!.hasError('email')">
+          Email is invalid!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          type="{{ passwordType }}"
+          matInput
+          placeholder="Enter your password."
+          formControlName="password"
+          autocomplete="on"
+        />
+        <mat-error *ngIf="form.get('password')!.hasError('required')">
+          Password is required!
+        </mat-error>
+  
+        <i
+          *ngIf="passwordType === 'password'"
+          (click)="toggleLock()"
+          class="inputEye fa-regular fa-eye-slash"
+        ></i>
+        <i
+          *ngIf="passwordType === 'text'"
+          (click)="toggleLock()"
+          class="inputEye fa-regular fa-eye"
+        ></i>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Repeat Password</mat-label>
+        <input
+          type="{{ passwordType }}"
+          matInput
+          placeholder="Repeat password."
+          formControlName="rePass"
+          autocomplete="on" 
+        />
+        
+      </mat-form-field>
+      <mat-error class="error" *ngIf="form.errors?.['passwordsDontMatch']">
+        Password must match!
+      </mat-error>
+      <div class="input-field button">
+        <button [disabled]="form.get('email')!.invalid || form.get('password')!.value != form.get('rePass')!.value" type="submit">
+          Sing Up
+        </button>
+      </div>
+      <div class="login-signup">
+        <p>You have an account? <a href="/login">Log in</a></p>
+      </div>
+    </form>
+  </div>
+  

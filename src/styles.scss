@@ -3,3 +3,23 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input{
+      color: white;
+  }
+  
+  .mat-mdc-text-field-wrapper .mat-mdc-form-field-infix .mat-mdc-floating-label{
+      color: white;
+  }
+  
+  .mat-mdc-form-field-error{
+      position: relative;
+      left: -5px;
+  }
+  
