@@ -9,10 +9,11 @@ import { AddPostComponent } from 'src/app/components/add-post/add-post.component
 import { FormsModule } from '@angular/forms';
 import { SinglePostComponent } from 'src/app/components/single-post/single-post.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditPostComponent } from 'src/app/components/edit-post/edit-post.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent,PostsComponent, AddPostComponent , SinglePostComponent,],
+  declarations: [HomeComponent, HeroComponent,PostsComponent, AddPostComponent , SinglePostComponent, EditPostComponent],
   imports: [
     CommonModule,
     RouterModule,

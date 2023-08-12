@@ -31,20 +31,20 @@ export class PostsService {
     (user) => (this.userId = user?.uid)
   );
 
-  updatePost(post: Post): Observable<void> {
-    const ref = doc(this.firestore, 'posts');
-    return from(updateDoc(ref, { ...post }));
+  updatePost(f: any , id : any): Observable<void> {
+    const ref = doc(this.firestore, `posts/${id}`);
+    return from(updateDoc(ref, { ...f }));
   }
   loadOne(id: string | any) {
     const docc = doc(this.firestore, `posts/${id}`);
-    return docData(docc);
+    return docData(docc , { idField : 'id'});
   }
 
   addPost(f: any) {
     if (!this.user) return;
     const collectionInstance = collection(this.firestore, 'posts');
 
-    from(
+ return   from(
       addDoc(collectionInstance, { ...f.value, uid: this.userId })
     ).subscribe(() => this.router.navigate(['posts']));
   }

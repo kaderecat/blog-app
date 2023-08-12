@@ -1,0 +1,15 @@
+<div class='write'>
+    <h1>Edit your post</h1>
+    <img class='writeImg' src="{{post.image}}" alt="" />
+    <form #f="ngForm" (ngSubmit)="EditPost(f)" class='writeForm'>
+      <div class="writeFormGroup">
+        <label class='writeLabel' for="fileInput"><i  class="writeIcon fa-solid fa-plus"></i></label>
+        <input type="file" id='fileInput' name="image" style="display: none" ngModel (change)="upload($event)">
+        <input type="text" placeholder='Title' name="title" class='writeInput' autoFocus={true} value="{{post.title}}" ngModel>
+      </div>
+      <div class="writeFormGroup">
+        <textarea placeholder='Tell your story...' name="post" type='text' class='writeInput writeText' value="{{post.post}}" ngModel></textarea>
+      </div>
+      <button class='writeSubmit'>Publish</button>
+    </form>
+  </div>

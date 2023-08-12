@@ -4,7 +4,7 @@
     <h1 class="singlePostTitle">
       {{ post.title }}
       <div *ngIf="isOwner" class="singlePostEdit">
-        <i class="singlePostIcon far fa-edit"></i>
+        <i class="singlePostIcon far fa-edit" routerLink="/edit/{{post.id}}"></i>
         <i class="singlePostIcon far fa-trash-alt" (click)="deletePost()"></i>
       </div>
     </h1>
