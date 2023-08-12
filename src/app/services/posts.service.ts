@@ -7,6 +7,7 @@ import {
   addDoc,
   collection,
   collectionData,
+  deleteDoc,
   doc,
   docData,
   updateDoc,
@@ -25,20 +26,18 @@ export class PostsService {
   ) {}
 
   userId: string | any = '';
-  posts : any = []
+  posts: any = [];
   user = this.userService.currentUserProfile$.subscribe(
     (user) => (this.userId = user?.uid)
   );
 
   updatePost(post: Post): Observable<void> {
-
     const ref = doc(this.firestore, 'posts');
     return from(updateDoc(ref, { ...post }));
   }
   loadOne(id: string | any) {
     const docc = doc(this.firestore, `posts/${id}`);
-   return docData(docc) 
-    
+    return docData(docc);
   }
 
   addPost(f: any) {
@@ -50,10 +49,14 @@ export class PostsService {
     ).subscribe(() => this.router.navigate(['posts']));
   }
 
-  getPosts()  {
+  getPosts() {
     const collectionInstance = collection(this.firestore, 'posts');
 
-  return  collectionData(collectionInstance , {idField : 'id'})
-} 
+    return collectionData(collectionInstance, { idField: 'id' });
+  }
 
+  deletePost(id : string | any) {
+    const docc = doc(this.firestore, `posts/${id}`);
+    return deleteDoc(docc) 
+  }
 }

@@ -5,7 +5,7 @@
       {{ post.title }}
       <div *ngIf="isOwner" class="singlePostEdit">
         <i class="singlePostIcon far fa-edit"></i>
-        <i class="singlePostIcon far fa-trash-alt"></i>
+        <i class="singlePostIcon far fa-trash-alt" (click)="deletePost()"></i>
       </div>
     </h1>
     <div class="singlePostInfo">
