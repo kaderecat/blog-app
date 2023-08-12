@@ -19,7 +19,7 @@ export class UserService {
         if (!user?.uid) {
           return of(null);
         }
-      
+        localStorage.setItem('user', user.uid);
         const ref = doc(this.firestore, 'users', user?.uid);
         return docData(ref) as Observable<ProfileUser>;
       })

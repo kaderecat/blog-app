@@ -43,7 +43,7 @@ password : this.form.value.password},
       )
       .subscribe(
         () => {
-          localStorage.setItem('user', this.form.value.email);
+        
           this.router.navigate(['']);
         },
         (error: any) => {

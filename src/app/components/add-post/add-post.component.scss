@@ -1,13 +1,21 @@
 .write{
-    padding-top: 50px;
+    width: 82%;
+    margin: 20px auto;
+    img{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+    }
 }
+
+
 
 .writeForm{
 position: relative;
 }
 
 .writeFormGroup{
-    margin-left: 150px;
     display: flex;
     align-content: center;
 
@@ -39,7 +47,7 @@ position: relative;
     font-size: 30px;
     border: none;
     padding: 20px;
-    width: 70vw;
+    width: 90%;
 }
 
 .writeInput:focus{
@@ -49,12 +57,14 @@ position: relative;
 .writeText {
     font-size: 20px;
     height: 100vh;
+    width: 100%;
+    padding: 0;
 }
 
 .writeSubmit{
     position: absolute;
     top: 20px;
-    right: 50px;
+    right: 0;
     color: white;
     background-color: teal;
     padding: 10px;
@@ -71,13 +81,7 @@ position: relative;
     scale: 1.05;
 }
 
-.writeImg{
-    margin-left: 150px;
-    width: 70vw;
-    height: 250px;
-    border-radius: 10px;
-    object-fit: cover;
-}
+
 
 .writeFormGroup input::placeholder,textarea::placeholder{
     color: #444;

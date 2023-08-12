@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, and } from '@angular/fire/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
-import { Post } from 'src/app/models/Post';
-import { PostsService } from 'src/app/services/posts.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -16,26 +15,28 @@ export class AddPostComponent {
   constructor(
     private firestore: Firestore,
     private router: Router,
-    private userService : UserService,
-    private postService: PostsService,
-    private fireStorage: AngularFireStorage
-
+    private userService: UserService,
+    private fireStorage: AngularFireStorage,
+    private snack : MatSnackBar
   ) {}
-
+  url = '';
   userId: string | any = '';
+  username : string | any = ''
   user = this.userService.currentUserProfile$.subscribe(
-    (user) => (this.userId = user?.uid)
+    (user) => (this.userId = user?.uid, this.username = user?.displayName )
   );
 
- async upload(event: any , f : any) {
-    const { image, ...data }: Post | any = f.value;
+  async upload(event: any) {
     const file = event.target.files[0];
+    this.snack.open('Uploading image...', 'OK  ', {
+      duration: 5000,
+    })
     if (file) {
       const path = `images/${file.name}`;
       const uploadTask = await this.fireStorage.upload(path, file);
-      const url = await uploadTask.ref.getDownloadURL();
+      this.url = await uploadTask.ref.getDownloadURL()
       
-      this.postService.updatePost({ image: url, ...data });
+      
     }
   }
   addPost(f: any) {
@@ -43,7 +44,7 @@ export class AddPostComponent {
     const collectionInstance = collection(this.firestore, 'posts');
 
     from(
-      addDoc(collectionInstance, { ...f.value, uid: this.userId })
+      addDoc(collectionInstance, { ...f.value, image: this.url,  uid: this.userId , name : this.username })
     ).subscribe(() => this.router.navigate(['posts']));
   }
 }

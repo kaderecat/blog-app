@@ -6,6 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 import {
   AngularFireStorage,
 } from '@angular/fire/compat/storage';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     private usersService: UserService,
     private fb: FormBuilder,
-    private fireStorage: AngularFireStorage
+    private fireStorage: AngularFireStorage,
+    private snack : MatSnackBar
   ) {}
   user$ = this.usersService.currentUserProfile$;
 
@@ -44,6 +46,9 @@ export class ProfileComponent implements OnInit {
    async upload(event: any) {
     const { photoURL, ...data }: ProfileUser | any = this.profileForm.value;
    const file = event.target.files[0]
+   this.snack.open('Uploading image...', 'OK  ', {
+    duration: 5000,
+  })
    if(file){
      const path = `images/${file.name}`
      const uploadTask =await this.fireStorage.upload(path,file)

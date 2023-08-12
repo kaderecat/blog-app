@@ -5,6 +5,7 @@ import {
   authState,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  user,
 } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
 @Injectable({

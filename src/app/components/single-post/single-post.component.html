@@ -1,0 +1,22 @@
+<div class="singlePost">
+  <div class="singlePostWrapper">
+    <img class="singlePostImg" src="{{ post.image }}" alt="" />
+    <h1 class="singlePostTitle">
+      {{ post.title }}
+      <div *ngIf="isOwner" class="singlePostEdit">
+        <i class="singlePostIcon far fa-edit"></i>
+        <i class="singlePostIcon far fa-trash-alt"></i>
+      </div>
+    </h1>
+    <div class="singlePostInfo">
+      <span>
+        Author:
+        <b class="singlePostAuthor">
+          <span>{{post.name}}</span>
+        </b>
+      </span>
+    </div>
+    <p class="singlePostDesc">{{post.post}}
+      </p>
+    </div>
+</div>

@@ -7,16 +7,19 @@ import { RouterModule } from '@angular/router';
 import { PostsComponent } from 'src/app/components/posts/posts.component';
 import { AddPostComponent } from 'src/app/components/add-post/add-post.component';
 import { FormsModule } from '@angular/forms';
+import { SinglePostComponent } from 'src/app/components/single-post/single-post.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent,PostsComponent, AddPostComponent],
+  declarations: [HomeComponent, HeroComponent,PostsComponent, AddPostComponent , SinglePostComponent,],
   imports: [
     CommonModule,
-    CarouselModule,
     RouterModule,
-    FormsModule
+    MatSnackBarModule,
+    FormsModule,
+    CarouselModule
   ],
-  exports : [HomeComponent, HeroComponent, PostsComponent, AddPostComponent]
+  exports : [HomeComponent, HeroComponent, PostsComponent, AddPostComponent , SinglePostComponent]
 })
 export class CoreModule { }

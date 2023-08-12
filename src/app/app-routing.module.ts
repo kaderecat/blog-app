@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { SinglePostComponent } from './components/single-post/single-post.component';
 
 const routes: Routes = [
 {path : '' , component : HeroComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path : 'profile' , component : ProfileComponent},
 {path : 'posts' , component : PostsComponent},
 {path : 'add-post' , component : AddPostComponent},
+{path : 'posts/:id' , component : SinglePostComponent},
 
 ];
 
