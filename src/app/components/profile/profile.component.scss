@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
+    width: 82%;
   }
   
   .profile-image {
@@ -21,7 +22,6 @@
     position: absolute;
     bottom: 10px;
     right: 0;
-    background-color: darksalmon;
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -29,24 +29,35 @@
   }
   .profile-image > button:hover{
   
-      background-color:rgb(255, 131, 90) ;
       scale: 1.2;
   }
   
+  form {
+    display: flex;
+    position: relative;
+    .column{
+      width: 100%;
+
+      .row{
+        width: 100%;
+      }
+    }
+  }
+
   .form-container {
-    max-width: 400px;
+    width: 100%;
     margin-top: 40px;
     border: 1px solid;
     padding: 40px;
     height: 80vh;
     box-shadow: 10px 5px lightgray;
-    background-color: salmon;
   }
   
-  .row {
-    display: flex;
-    gap: 16px;
-  }
+  // .row {
+  //   display: flex;
+  //   gap: 16px;
+  //   width: 50%;
+  // }
   
   .save {
     padding: 10px;
@@ -62,3 +73,12 @@
     background-color: aqua;
   }
   
+.mdc-text-field__input{
+    color: black !important;
+  }
+
+  button { 
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }

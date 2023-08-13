@@ -30,8 +30,8 @@ export class ProfileComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.usersService.currentUserProfile$.subscribe((user) =>
-      this.profileForm.patchValue({ ...user })
+    this.usersService.currentUserProfile$.subscribe((user) =>{
+      this.profileForm.patchValue({ ...user })}
     );
   }
 

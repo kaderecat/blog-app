@@ -1,51 +1,75 @@
+<div class="container">
+  <div class="form-container" *ngIf="user$ | async as user">
+    <h1>Update Profile</h1>
+    <div class="profile-image">
+      <img
+        width="120"
+        height="120"
+        class="margin-top mat-elevation-z1"
+        [src]="user.photoURL ?? '/assets/images/placeholder.jpg'"
+      />
+      <button mat-mini-fab (click)="inputField.click()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <input #inputField hidden type="file" (change)="upload($event)" />
 
-
-    <div class="container">
-        <div class="form-container" *ngIf="user$ | async as user">
-          <h1>Update Profile</h1>
-          <div class="profile-image">
-            <img width="120" height="120" class="margin-top mat-elevation-z1" [src]="user.photoURL ?? '/assets/images/placeholder.jpg'" />
-            <button mat-mini-fab (click)="inputField.click()">
-              <mat-icon>edit</mat-icon>
-            </button>
-          </div>
-          <input #inputField hidden type="file" (change)="upload($event)" />
-        
-          <form class="margin-top" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
-            <div class="row">
-              <mat-form-field>
-                <input
-                  type="text"
-                  matInput
-                  formControlName="firstName"
-                  placeholder="First Name"
-                />
-              </mat-form-field>
-              <mat-form-field>
-                <input
-                  type="text"
-                  matInput
-                  formControlName="lastName"
-                  placeholder="Last Name"
-                />
-              </mat-form-field>
-            </div>
-        
-            <div class="row">
-              <mat-form-field>
-                <input
-                  type="text"
-                  matInput
-                  formControlName="displayName"
-                  placeholder="Display Name"
-                />
-              </mat-form-field>
-            </div>
-        
-            <button type="submit" class="save">
-              Save
-            </button>
-          </form>
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+      <div class="column">
+        <div class="row">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="firstName"
+              placeholder="First Name"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="lastName"
+              placeholder="Last Name"
+            />
+          </mat-form-field>
         </div>
-   
-        
+
+        <div class="row">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="displayName"
+              placeholder="Display Name"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="column">
+        <div class="row">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              formControlName="displayName"
+              placeholder="Display Name"
+            />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              value="{{ user.email }}"
+              placeholder="email"
+              disabled="true"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <button type="submit" class="save">Save</button>
+    </form>
+  </div>
+</div>
