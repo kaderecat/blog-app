@@ -1,0 +1,107 @@
+.footer-container {
+  width: 100%;
+  background-color: #162433;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .topRight {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      .title {
+        color: white;
+        font-size: 35px;
+        text-align: center;
+        font-family: "Varela Round", sans-serif;
+      }
+      .icons {
+        display: flex;
+        color: white;
+        font-size: 30px;
+        justify-content: center;
+        gap: 20px;
+        i {
+          transition: ease 0.3s;
+          cursor: pointer;
+        }
+
+        i:hover {
+          scale: 1.2;
+        }
+      }
+    }
+    .bot-right {
+      flex: 1;
+      width: 100%;
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        .title {
+          color: white;
+          font-size: 20px;
+        }
+        .form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ::placeholder {
+            color: white !important;
+          }
+          mat-form-field {
+            width: 60%;
+          }
+
+          width: 100%;
+
+          .btn-container {
+            position: relative;
+            width: 15%;
+            height: 88.4px;
+            .form-btn {
+              top: 0;
+              bottom: 32.4px;
+              position: absolute;
+              background-color: #146aff;
+              color: white;
+              font-size: 1.4rem;
+              letter-spacing: 0.5px;
+              font-weight: 700;
+              font-family: "roboto", sans-serif;
+              width: 100%;
+              cursor: pointer;
+              transition: ease 0.3s ;
+            }
+            .form-btn:hover{
+              background-color: #0254e2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 76px;
+}
