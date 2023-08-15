@@ -9,6 +9,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { SinglePostComponent } from './components/single-post/single-post.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { MyPostsComponent } from './components/my-posts/my-posts.component';
 
 const routes: Routes = [
 {path : '' , component : HeroComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
 {path : 'add-post' , component : AddPostComponent},
 {path : 'posts/:id' , component : SinglePostComponent},
 {path : 'edit/:id' , component : EditPostComponent},
+{path : 'my-posts' , component : MyPostsComponent},
 
 ];
 

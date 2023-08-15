@@ -1,0 +1,31 @@
+<div class="posts">
+  <ng-container *ngIf="posts.length > 0; else NoPosts">
+    <div class="title">
+      <h1>My Posts</h1>
+    </div>
+    <div class="posts-container">
+      <ng-container *ngFor="let post of posts">
+        <div class="post">
+          <div class="img-container">
+            <img
+              class="postImg"
+              src="{{ post.image }}"
+              alt=""
+              routerLink="/posts/{{ post.id }}"
+            />
+          </div>
+          <div class="postInfo">
+            <span class="postTitle" routerLink="/posts/{{ post.id }}">{{
+              post.title
+            }}</span>
+            <hr />
+          </div>
+          <p class="postDescription">{{ post.post }}</p>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #NoPosts>
+    <div class="noPosts"><h1>No posts yet!</h1></div>
+  </ng-template>
+</div>
