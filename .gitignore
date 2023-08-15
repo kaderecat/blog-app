@@ -10,6 +10,7 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+/src/environmets
 
 # IDEs and editors
 .idea/
@@ -45,4 +46,3 @@ Thumbs.db
 .firebase
 *-debug.log
 .runtimeconfig.json
-/environmets/environment.ts
