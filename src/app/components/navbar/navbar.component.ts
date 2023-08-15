@@ -14,6 +14,7 @@ displayName: any;
 constructor(private auth : AuthenticationService, private router : Router , private userService : UserService){}
 user$ = this.userService.currentUserProfile$
 
+
   logout(){
     this.auth.Logout().subscribe(() => 
     this.router.navigate(['']) )

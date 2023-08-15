@@ -19,7 +19,8 @@ import { EditPostComponent } from 'src/app/components/edit-post/edit-post.compon
     RouterModule,
     MatSnackBarModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    
   ],
   exports : [HomeComponent, HeroComponent, PostsComponent, AddPostComponent , SinglePostComponent]
 })
