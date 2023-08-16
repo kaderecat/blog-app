@@ -8,6 +8,7 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class HomeComponent implements OnInit{
   slides: any
+  isHome : boolean = true
   constructor(private postService : PostsService){}
 
   

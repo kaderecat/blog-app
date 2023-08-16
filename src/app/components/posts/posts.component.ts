@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -8,17 +8,18 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  constructor(
-    private postService : PostsService
-  ) {
-  }
-
+  constructor(private postService: PostsService) {}
+  @Input() isHome!: boolean 
   posts: any;
- 
 
   ngOnInit(): void {
-    this.postService.getPosts().subscribe((val) => this.posts = val)
+    if(this.isHome){
+      
+      this.postService.getPosts().subscribe((val) => 
+        this.posts = val.slice(-6))
+    }else {
+      this.postService.getPosts().subscribe((val) => (this.posts = val))
+    }
     
-
   }
 }
