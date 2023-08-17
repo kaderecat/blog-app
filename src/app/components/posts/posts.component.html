@@ -1,4 +1,6 @@
-<div class="search">
+
+
+<div class="search" *ngIf="!isHome">
   <app-search (searchText)="onSearchTextEntered($event)" />
 </div>
 
@@ -24,4 +26,5 @@
       </div>
     </ng-container>
   </ng-container>
+
 </div>
