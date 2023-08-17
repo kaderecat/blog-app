@@ -1,16 +1,27 @@
+<div class="search">
+  <app-search (searchText)="onSearchTextEntered($event)" />
+</div>
+
 <div class="posts">
   <ng-container *ngFor="let post of posts">
-    <div class="post">
-      <div class="img-container">
-        <img class="postImg" src="{{ post.image }}" alt="" routerLink="/posts/{{ post.id }}"/>
+    <ng-container *ngIf="searchText === '' || post.title.toLowerCase().includes(searchText) " >
+      <div class="post">
+        <div class="img-container">
+          <img
+            class="postImg"
+            src="{{ post.image }}"
+            alt=""
+            routerLink="/posts/{{ post.id }}"
+          />
+        </div>
+        <div class="postInfo">
+          <span class="postTitle" routerLink="/posts/{{ post.id }}">{{
+            post.title
+          }}</span>
+          <hr />
+        </div>
+        <p class="postDescription">{{ post.post }}</p>
       </div>
-      <div class="postInfo">
-        <span class="postTitle" routerLink="/posts/{{ post.id }}">{{
-          post.title
-        }}</span>
-        <hr />
-      </div>
-      <p class="postDescription">{{ post.post }}</p>
-    </div>
+    </ng-container>
   </ng-container>
 </div>

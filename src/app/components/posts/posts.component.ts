@@ -9,17 +9,22 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class PostsComponent implements OnInit {
   constructor(private postService: PostsService) {}
-  @Input() isHome!: boolean 
+  @Input() isHome!: boolean;
   posts: any;
 
   ngOnInit(): void {
-    if(this.isHome){
-      
-      this.postService.getPosts().subscribe((val) => 
-        this.posts = val.slice(-6))
-    }else {
-      this.postService.getPosts().subscribe((val) => (this.posts = val))
+    if (this.isHome) {
+      this.postService
+        .getPosts()
+        .subscribe((val) => (this.posts = val.slice(-6)));
+    } else {
+      this.postService.getPosts().subscribe((val) => (this.posts = val));
     }
-    
+  }
+
+  searchText: string = '';
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
   }
 }

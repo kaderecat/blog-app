@@ -10,18 +10,32 @@ import { FormsModule } from '@angular/forms';
 import { SinglePostComponent } from 'src/app/components/single-post/single-post.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditPostComponent } from 'src/app/components/edit-post/edit-post.component';
-
+import { SearchComponent } from 'src/app/components/search/search.component';
 
 @NgModule({
-  declarations: [HomeComponent, HeroComponent,PostsComponent, AddPostComponent , SinglePostComponent, EditPostComponent],
+  declarations: [
+    HomeComponent,
+    HeroComponent,
+    PostsComponent,
+    AddPostComponent,
+    SinglePostComponent,
+    EditPostComponent,
+    SearchComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
     MatSnackBarModule,
     FormsModule,
     CarouselModule,
-    
   ],
-  exports : [HomeComponent, HeroComponent, PostsComponent, AddPostComponent , SinglePostComponent]
+  exports: [
+    HomeComponent,
+    HeroComponent,
+    PostsComponent,
+    AddPostComponent,
+    SinglePostComponent,
+    SearchComponent,
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}
