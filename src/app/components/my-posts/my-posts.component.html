@@ -1,4 +1,4 @@
-<div class="posts">
+<div class="posts" *ngIf="posts">
   <ng-container *ngIf="posts.length > 0; else NoPosts">
     <div class="title">
       <h1>My Posts</h1>

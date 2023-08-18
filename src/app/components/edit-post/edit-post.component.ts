@@ -44,6 +44,7 @@ export class EditPostComponent implements OnInit {
 
   EditPost(f: any) {
     const id: string | null = this.act.snapshot.paramMap.get('id');
+console.log(f.value);
 
     const ref = doc(this.firestore, `posts/${id}`);
     return from(updateDoc(ref, { ...f.value, image : this.url })).subscribe(() => this.router.navigate(['posts']));
