@@ -4,11 +4,11 @@
     <form #f="ngForm" (ngSubmit)="EditPost(f)" class='writeForm'>
       <div class="writeFormGroup">
         <label class='writeLabel' for="fileInput"><i  class="writeIcon fa-solid fa-plus"></i></label>
-        <input type="file" id='fileInput' name="image" style="display: none" ngModel (change)="upload($event)">
-        <input type="text" placeholder='Title' name="title" class='writeInput' autoFocus={true} value="{{post.title}}" ngModel>
+        <input type="file" id='fileInput' name="image" style="display: none"  (change)="upload($event)">
+        <input type="text" placeholder='Title' name="title" class='writeInput' autoFocus={true} value="{{post.title}}" [(ngModel)]="post.title">
       </div>
       <div class="writeFormGroup">
-        <textarea placeholder='Tell your story...' name="post" type='text' class='writeInput writeText' value="{{post.post}}" ngModel></textarea>
+        <textarea placeholder='Tell your story...' name="post" type='text' class='writeInput writeText' value="{{post.post}}" [(ngModel)]="post.post"></textarea>
       </div>
       <button class='writeSubmit'>Save</button>
     </form>

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Firestore, addDoc, collection, doc, updateDoc } from '@angular/fire/firestore';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  doc,
+  updateDoc,
+} from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { from } from 'rxjs';
@@ -44,15 +50,17 @@ export class EditPostComponent implements OnInit {
 
   EditPost(f: any) {
     const id: string | null = this.act.snapshot.paramMap.get('id');
-console.log(f.value);
+    console.log(f.value);
 
     const ref = doc(this.firestore, `posts/${id}`);
-    return from(updateDoc(ref, { ...f.value, image : this.url })).subscribe(() => this.router.navigate(['posts']));
-    
+    return from(updateDoc(ref, { ...f.value, image: this.url })).subscribe(() =>
+      this.router.navigate(['posts'])
+    );
   }
   ngOnInit(): void {
     const id: string | null = this.act.snapshot.paramMap.get('id');
-
-    this.postsService.loadOne(id).subscribe((val) => (this.post = val));
+    this.postsService
+      .loadOne(id)
+      .subscribe((val) => ((this.post = val), (this.url = this.post.image)));
   }
 }
