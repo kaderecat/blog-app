@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./my-posts.component.scss'],
 })
 export class MyPostsComponent {
-  constructor(private postService: PostsService , private userService : UserService) {}
+  constructor(private postService: PostsService  ) {}
 
   posts: any;
   userId : any

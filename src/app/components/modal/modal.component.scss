@@ -1,0 +1,14 @@
+.mat-mdc-dialog-actions{
+    justify-content: center;
+    gap: 20px;
+
+    button{
+        border-radius: 50%;
+        padding: 5px 10px;
+        transition: ease 0.3s;
+    }
+
+    button:hover{
+        background-color: lightgray;
+    }
+}

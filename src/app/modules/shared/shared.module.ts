@@ -7,11 +7,13 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent,FooterComponent],
+  declarations: [NavbarComponent,FooterComponent,ModalComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -19,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule
   ],
   exports : [NavbarComponent, FooterComponent]
 })

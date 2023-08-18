@@ -11,6 +11,7 @@ import { SinglePostComponent } from 'src/app/components/single-post/single-post.
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditPostComponent } from 'src/app/components/edit-post/edit-post.component';
 import { SearchComponent } from 'src/app/components/search/search.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { SearchComponent } from 'src/app/components/search/search.component';
     MatSnackBarModule,
     FormsModule,
     CarouselModule,
+    MatDialogModule,
+
   ],
   exports: [
     HomeComponent,

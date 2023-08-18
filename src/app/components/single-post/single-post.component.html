@@ -5,7 +5,8 @@
       {{ post.title }}
       <div *ngIf="isOwner" class="singlePostEdit">
         <i class="singlePostIcon far fa-edit" routerLink="/edit/{{post.id}}"></i>
-        <i class="singlePostIcon far fa-trash-alt" (click)="deletePost()"></i>
+        <button class="dialog-btn" mat-raised-button (click)="openDialog()">  <i class="singlePostIcon far fa-trash-alt" ></i></button>
+        <!-- <i class="singlePostIcon far fa-trash-alt" (click)="deletePost()"></i> -->
       </div>
     </h1>
     <div class="singlePostInfo">
