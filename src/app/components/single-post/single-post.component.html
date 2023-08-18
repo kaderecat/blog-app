@@ -1,6 +1,6 @@
 <div class="singlePost">
-  <div class="singlePostWrapper">
-    <img class="singlePostImg" src="{{ post.image }}" alt="" />
+  <div class="singlePostWrapper" *ngIf="post">
+    <img  class="singlePostImg" src="{{ post.image }}" alt="" />
     <h1 class="singlePostTitle">
       {{ post.title }}
       <div *ngIf="isOwner" class="singlePostEdit">
