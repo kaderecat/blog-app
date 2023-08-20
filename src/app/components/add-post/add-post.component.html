@@ -1,5 +1,5 @@
 <div class='write'>
-    <img class='writeImg' src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" alt="" />
+    <img class='writeImg' [src]="url" alt= />
     <form #f="ngForm" (ngSubmit)="addPost(f)" class='writeForm'>
       <div class="writeFormGroup">
         <label class='writeLabel' for="fileInput"><i  class="writeIcon fa-solid fa-plus"></i></label>

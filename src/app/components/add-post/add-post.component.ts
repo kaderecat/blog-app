@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
@@ -17,9 +18,9 @@ export class AddPostComponent {
     private router: Router,
     private userService: UserService,
     private fireStorage: AngularFireStorage,
-    private snack : MatSnackBar
+    private snack : MatSnackBar,
   ) {}
-  url = '';
+  url : any = 'https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=';
   userId: string | any = '';
   username : string | any = ''
   user = this.userService.currentUserProfile$.subscribe(

@@ -39,7 +39,7 @@ export class EditPostComponent implements OnInit {
   async upload(event: any) {
     const file = event.target.files[0];
     this.snack.open('Uploading image...', 'OK  ', {
-      duration: 5000,
+      duration: 3500,
     });
     if (file) {
       const path = `images/${file.name}`;
